@@ -84,7 +84,7 @@ class VectorStore:
     def search(
         self,
         question,
-        top_k=4
+        top_k=10
     ):
 
         response = ollama.embed(

@@ -15,7 +15,7 @@ EXCEL_FILES = [
 LLM_MODEL = "qwen2.5:7b"
 EMBED_MODEL = "nomic-embed-text"
 
-TOP_K = 3
+TOP_K = 10
 
 
 # ==========================
@@ -104,10 +104,14 @@ You are an assistant answering questions ONLY using the provided Excel data.
 
 Rules:
 
-1. Use ONLY the context.
-2. Never use outside knowledge.
-3. If the answer is not found, reply EXACTLY:
-I couldn't find this information in the uploaded Excel file(s). Please ask a question related to the uploaded data.
+1. Use ONLY the provided context.
+2. Do NOT use outside knowledge.
+3. Read ALL retrieved rows before answering.
+4. The answer may require combining multiple fields from the SAME row.
+5. If the question contains multiple conditions (for example: department + position, city + salary, joining date + department), find the row that satisfies ALL conditions.
+6. Do not answer using partial matches.
+7. If multiple rows satisfy the conditions, list all of them.
+8. If no row satisfies all conditions, reply EXACTLY:
 
 Context:
 
