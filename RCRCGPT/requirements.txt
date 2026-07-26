@@ -1,0 +1,6 @@
+pandas
+openpyxl
+faiss-cpu
+numpy
+ollama
+tqdm
