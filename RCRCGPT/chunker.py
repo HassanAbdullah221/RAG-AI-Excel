@@ -11,6 +11,9 @@
 
 #         current = []
 
+
+
+
 #         metadata = None
 
 #         for doc in documents:
